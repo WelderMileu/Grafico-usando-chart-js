@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="node_modules/chart.js/dist/Chart.js"></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <div>
+            <canvas class="grafico" height="50px"></canvas><br><br><!-- Primeiro Grafico -->
+            <canvas class="grafico2" height="50px"></canvas><br><br><!-- Segundo Grafico -->
+            <canvas class="grafico3" height="50px"></canvas><!-- Terceiro Grafico -->
+        </div>
+        <script>
+            let ctx = document.getElementsByClassName('grafico');
+            let conts = document.getElementsByClassName('grafico2');
+            let cone = document.getElementsByClassName('grafico3');
+
+            let grafic = new Chart(ctx, {
+                type:'bar',
+                data:{
+                    labels:['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
+                    datasets:[{
+                        label:"Grafico Bar",
+                        data:[12,3,44,5,67,88,7,6,5,4,77,9],
+                        backgroundColor: [
+                        'rgba(0, 0, 0, 0.2)',
+                        'rgba(0, 0, 0, 0.2)',
+                        'rgba(0, 0, 0, 0.2)',
+                        'rgba(0, 0, 0, 0.2)',
+                        'rgba(0, 0, 0, 0.2)',
+                        'rgba(0, 0, 0, 0.2)',
+                        'rgba(0, 0, 0, 0.2)',
+                        'rgba(0, 0, 0, 0.2)',
+                        'rgba(0, 0, 0, 0.2)',
+                        'rgba(0, 0, 0, 0.2)',
+                        'rgba(0, 0, 0, 0.2)',
+                        'rgba(0, 0, 0, 0.2)'
+                        ],
+                        borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                        ],
+                    }]
+                }
+            });
+
+            let grafic2 = new Chart(conts,{
+                type:'line',
+                    data:{
+                        labels:['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
+                        datasets:[{
+                            label:"Grafico Line",
+                            data:[12,3,44,5,67,88,7,6,5,4,77,9],
+                            borderColor:'rgba(0,0,0,1)'
+                    }],
+                }
+            });
+            
+            let grafic3 = new Chart(cone,{
+                type:'radar',
+                data:{
+                    labels:['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
+                    datasets:[{
+                        label:'Grafico Radar',
+                        data:[12,3,44,5,67,88,7,6,5,4,77,9],
+                        borderColor:'rgba(344,543,159,1)'
+                    }]
+                }
+            });
+        </script>
+    </body>
+</html>
